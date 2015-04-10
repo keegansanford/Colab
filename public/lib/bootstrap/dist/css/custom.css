@@ -1,0 +1,14 @@
+.jumbotron{
+	color:inherit;
+	background-color: #864e9f;
+}
+
+.jumbotron img{
+	width:400px;
+	margin-bottom:25px;
+}
+
+.jumbotron p {
+	color:#ffffff;
+	margin-bottom:25px;
+}

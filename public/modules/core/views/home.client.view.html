@@ -3,29 +3,17 @@
       <div class="container">
         <img alt="COLAB" class="img-responsive text-center" src="modules/core/img/brand/logo.png">
         <p>Welcome to the future of creative matchmaking. Colab is a centralized venue for designers, developers and creatives to meet up and collaborate. Just fill out the skills you're looking for in a creative team or partner and upload your own portfolio and you'll be on your way to making something awesome.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4" data-ng-hide="authentication.user" id="homebuttons">
+        <p><a class="btn btn-primary btn-lg" href="/#!/signin" role="button" ui-route="/signin" ng-class="{active: $uiRoute}">Sign In</a></p>
+        <p><a class="btn btn-primary btn-lg" href="#!/signup" role="button">Sign Up</a></p>
+      </div>
+      <div class="col-md-4">
+      </div>
       </div>
     </div>
  
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>My Skills</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>My Portfolio</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>My Matches</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
 
       <hr>
 

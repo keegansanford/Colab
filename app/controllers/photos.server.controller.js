@@ -104,6 +104,19 @@ exports.list = function(req, res) {
 		}
 	});
 };
+
+exports.listUserPhotos = function(req, res){
+  Photo.find({ user: req.user }).sort('-created').populate('user', 'displayName').exec(function(err, photos) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(photos);
+    }
+  });
+};
+
 /**
  * Likes a photo
  */

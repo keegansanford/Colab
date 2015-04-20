@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication',
-	function($scope, $http, $location, Users, Authentication) {
+angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', 'Photos',
+	function($scope, $http, $location, Users, Authentication, Photos) {
 		$scope.user = Authentication.user;
 
 		// If user is not signed in then redirect back home
@@ -65,6 +65,14 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 				$scope.passwordDetails = null;
 			}).error(function(response) {
 				$scope.error = response.message;
+			});
+		};
+
+		// Get user's photos
+		$scope.getUserPhotos = function() {
+			console.log("user photos ran!")
+			$scope.photos = Photos.query(function(){
+				console.log(response);
 			});
 		};
 	}

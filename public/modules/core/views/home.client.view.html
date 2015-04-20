@@ -2,12 +2,14 @@
 <div class="jumbotron">
       <div class="container">
         <img alt="COLAB" class="img-responsive text-center" src="modules/core/img/brand/logo.png">
-        <p>Welcome to the future of creative matchmaking. Colab is a centralized venue for designers, developers and creatives to meet up and collaborate. Just fill out the skills you're looking for in a creative team or partner and upload your own portfolio and you'll be on your way to making something awesome.</p>
+
+        <p data-ng-hide="authentication.user">Welcome to the future of creative matchmaking. Colab is a centralized venue for designers, developers and creatives to meet up and collaborate. Just fill out the skills you're looking for in a creative team or partner and upload your own portfolio and you'll be on your way to making something awesome.</p>
+        
         <div class="col-md-4">
         </div>
         <div class="col-md-4" data-ng-hide="authentication.user" id="homebuttons">
-        <p><a class="btn btn-primary btn-lg" href="/#!/signin" role="button" ui-route="/signin" ng-class="{active: $uiRoute}">Sign In</a></p>
-        <p><a class="btn btn-primary btn-lg" href="#!/signup" role="button">Sign Up</a></p>
+          <p><a class="btn btn-primary btn-lg" href="/#!/signin" role="button" ui-route="/signin" ng-class="{active: $uiRoute}">Sign In</a></p>
+          <p><a class="btn btn-primary btn-lg" href="#!/signup" role="button">Sign Up</a></p>    
       </div>
       <div class="col-md-4">
       </div>

@@ -1,7 +1,19 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication',
-	function($scope, $http, $location, Users, Authentication) {
+angular.module('users', ['ngTagsInput']).controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', 'Articles',
+	function($scope, $http, $location, Users, Authentication, Articles) {
+		
+		$scope.tags = [
+            { text: 'just' },
+            { text: 'some' },
+            { text: 'cool' },
+            { text: 'tags' }
+          ];
+          $scope.loadTags = function(query) {
+            return $http.get('/tags?query=' + query);
+          };
+        });
+
 		$scope.user = Authentication.user;
 
 		// If user is not signed in then redirect back home
@@ -66,6 +78,16 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 			}).error(function(response) {
 				$scope.error = response.message;
 			});
+		};
+
+		// Get user's projects
+		$scope.getUserProjects = function() {
+			console.log('user projects ran!');
+			$http.get('/users/me/projects')
+				.success(function(data){
+					console.log(data);
+					$scope.projects = data;
+				});
 		};
 	}
 ]);

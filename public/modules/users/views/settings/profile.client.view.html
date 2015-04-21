@@ -1,31 +1,68 @@
 <section class="row" data-ng-controller="SettingsController">
 	<div class="page-header">
 		<div class="profile">
-			<img class="profile__img" src="uploads/bf3fa8eaa5dae8bc15b52446c720e669.png">
-			<h1 class="profile__name">Andrew Nater</h1>
-			<p class="profile__bio">
+			<img class="profile__img" src="http://placehold.it/150x150">
+			<h1 class="profile__name">{{ user.displayName }}</h1>
+			<p class="profile__bio" data-ng-bind="user.bio">
 				Errem iriure definitiones ius ad, ei unum deleniti copiosae duo.
 			</p>
-			<button type="submit" class="btn btn-large btn-primary">Send Colab Request</button>
+			<div class="profile__social">
+				<ul>
+					<li ng-if="user.social.twitter">
+						<a href="http://twitter.com/{{user.social.twitter}}">
+							<img src="modules/users/img/social/twitter.png">
+						</a>
+					</li>
+					<li ng-if="user.social.dribbble">
+						<a href="http://dribbble.com/{{user.social.dribbble}}">
+							<img src="modules/users/img/social/dribbble.png">
+						</a>
+					</li>
+					<li ng-if="user.social.github">
+						<a href="http://github.com/{{user.social.github}}">
+							<img src="modules/users/img/social/github.png"> 
+						</a>
+					</li>
+					<li ng-if="user.social.linkedin">
+						<a href="http://linkedin.com/in/{{user.social.linkedin}}">
+							<img src="modules/users/img/social/linkedin.png">
+						</a>
+					</li>
+					<li ng-if="user.social.behance">
+						<a href="http://behance.net/{{user.social.behance}}">
+							<img src="modules/users/img/social/behance.png">
+						</a>
+					</li>
+					<li ng-if="user.social.codepen">
+						<a href="http://codepen.io/{{user.social.codepen}}">
+							<img src="modules/users/img/social/codepen.png"> 
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div class="profile__main">
-		<div class="col-md-6">
-			<h3>Andrew's Posts</h3>
-			<div class="post">
-				<img class="post__img" src="uploads/bf3fa8eaa5dae8bc15b52446c720e669.png">
+		<div class="col-md-6" data-ng-init="getUserProjects()">
+			<h2>{{ user.firstName }}'s Projects</h3>
+			<div class="post" data-ng-repeat="project in projects">
 				<div class="post__info">
-					<p class="post__title">
-						Message Icon
-					<p>
+					<h3 class="post__title">
+						<a data-ng-href="#!/articles/{{project._id}}">
+						{{ project.title }}
+						</a>
+					</h3>
+					<p class="post__content">
+						{{ project.content }}
+					</p>
 					<p class="hushed">
-						Posted on Apr 11, 2015
+						Posted on <span data-ng-bind="project.created | date:'mediumDate'"></span>
 					</p>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-6">
-			<h3>Andrew's Skills</h3>
+			<h2>{{ user.firstName }}'s Skills</h2>
 			<div class="list-group">
 				<a href="#" class="list-group-item">
 					<img src="/modules/users/img/photoshop.png" width="30" height="30"> Photoshop

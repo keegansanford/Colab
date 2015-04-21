@@ -84,6 +84,18 @@ exports.list = function(req, res) {
 	});
 };
 
+exports.listUserProjects = function(req, res){
+	Article.find({ user: req.user }).sort('-created').populate('user', 'displayName').exec(function(err, articles) {
+		if (err) {
+	  		return res.status(400).send({
+	    	message: errorHandler.getErrorMessage(err)
+	  	});
+		} else {
+	  		res.jsonp(articles);
+		}
+	});
+};
+
 /**
  * Article middleware
  */

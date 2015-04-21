@@ -17,6 +17,18 @@ h1#addmore {
 	margin-top:20px;
 }
 
+.row + .row{
+	margin-top: 2em;
+}
+
+label{
+	margin-top: .5em;
+}
+
+button:not(.close){
+	margin-top: 2em;
+}
+
 .profile{
 	text-align: center;
 	width: 80%;
@@ -48,15 +60,38 @@ h1#addmore {
 	overflow: hidden;
 }
 
-.profile__main h3{
+.profile__main h2{
 	text-align: center;
 	margin-bottom: 1em;
+}
+
+.profile__social ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+.profile__social li{
+	color: #6b3586;
+	display: inline-block;
+	margin-right: 1em;
+}
+	.profile__social li:last-of-type{
+		margin-right: 0;
+	}
+
+.profile__social img{
+	max-width: 50px;
+	background: white;
+	border-radius: 100%;
+	padding: 3px;
 }
 
 .post{
 	border: 1px solid #864e9f;
 	border-radius: 4px;
 	padding: 5%;
+	background:  rgba(255, 255, 255, 0.8);;
+	color: black;
 }
 
 .post__img{
@@ -65,7 +100,7 @@ h1#addmore {
 }
 
 .post__title{
-	font-size: 1.25em;
+	margin-top: 0;	
 	font-weight: bold;
 }
 

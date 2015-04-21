@@ -21,6 +21,10 @@ angular.module('users').config(['$stateProvider',
 			url: '/settings/matches',
 			templateUrl: 'modules/users/views/settings/matches.client.view.html'
 		}).
+		state('list-matches', {
+			url: '/settings/list-matches',
+			templateUrl: 'modules/users/views/settings/list-matches.client.view.html'
+		}).
 		state('password', {
 			url: '/settings/password',
 			templateUrl: 'modules/users/views/settings/change-password.client.view.html'

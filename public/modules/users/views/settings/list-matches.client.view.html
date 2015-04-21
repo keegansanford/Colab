@@ -1,0 +1,29 @@
+<section data-ng-controller="MatchesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>My Matches</h1>
+    </div>
+    <div class="row">
+        <div class="list-group">
+            <div data-ng-repeat="user in users" class="list-group-item">
+                <div class="col-md-2 col-sm-3 col-sx-6">
+                    <img class="center-block img-circle img-responsive" width="200px" src=" http://fillmurray.com/200/200" alt="Bill Murray">
+                    <button class="btn btn-primary" type="submit">Profile</button>
+                    <button class="btn btn-primary" type="submit">Message</button>
+                </div>
+                <div class="col-md-10 col-sm-9 col-sx-12">
+                    <div class="row">
+                        <h2 data-ng-bind="user.displayName"></h2>
+                        <h4>Title goes here</h4>
+                        <small>Joined </small><small data-ng-bind="user.created | date:'MM/dd/yyyy'"></small>
+                        <p>User bio goes here</p>
+                        <p class="pull-left">Skills &nbsp;</p>
+                        <button class="btn btn-primary" type="submit">HTML</button>
+                        <button class="btn btn-primary" type="submit">CSS</button>
+                        <button class="btn btn-primary" type="submit">JS</button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>

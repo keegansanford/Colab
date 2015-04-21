@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', 'Photos',
-	function($scope, $http, $location, Users, Authentication, Photos) {
+angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', 'Articles',
+	function($scope, $http, $location, Users, Authentication, Articles) {
 		$scope.user = Authentication.user;
 
 		// If user is not signed in then redirect back home
@@ -68,12 +68,14 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 			});
 		};
 
-		// Get user's photos
-		$scope.getUserPhotos = function() {
-			console.log('user photos ran!');
-			$scope.photos = Photos.query(function(){
-				
-			});
+		// Get user's projects
+		$scope.getUserProjects = function() {
+			console.log('user projects ran!');
+			$http.get('/users/me/projects')
+				.success(function(data){
+					console.log(data);
+					$scope.projects = data;
+				});
 		};
 	}
 ]);

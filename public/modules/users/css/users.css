@@ -27,7 +27,6 @@ label{
 
 button:not(.close){
 	margin-top: 2em;
-	width: 100%;
 }
 
 .profile{
@@ -61,7 +60,7 @@ button:not(.close){
 	overflow: hidden;
 }
 
-.profile__main h3{
+.profile__main h2{
 	text-align: center;
 	margin-bottom: 1em;
 }
@@ -91,6 +90,8 @@ button:not(.close){
 	border: 1px solid #864e9f;
 	border-radius: 4px;
 	padding: 5%;
+	background:  rgba(255, 255, 255, 0.8);;
+	color: black;
 }
 
 .post__img{
@@ -99,7 +100,7 @@ button:not(.close){
 }
 
 .post__title{
-	font-size: 1.25em;
+	margin-top: 0;	
 	font-weight: bold;
 }
 

@@ -1,17 +1,15 @@
-<head>
-<link rel="stylesheet" href="node_modules/ng-tags-input/build/ng-tags-input.min.css">    
-</head>
-<section class="row" data-ng-controller="SettingsController">
-<script type="text/javascript" src="public/lib/angular/angular.min.js"></script>
-<script type="text/javascript" src="node_modules/ng-tags-input/build/ng-tags-input.min.js"></script>
-	<div class="page-header">
+<section class="row" ng-app="users" data-ng-controller="SettingsController">
+	<!--<div class="page-header">
 		<h1>My Skills</h1>
-	</div>
-	<div class="alert alert-success alert-dismissible" role="alert">
+	</div>-->
+	<tags-input ng-model="tags">
+      <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
+	<!--<div class="alert alert-success alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	  <strong>Awesome!</strong> You have successfully added a new skill!
-	</div>
-	<div class="col-md-4">
+	</div>-->
+	<!--<div class="col-md-4">
 		<div class="list-group">
 		  <a href="#" class="list-group-item"><img src="/modules/users/img/photoshop.png" width="30" height="30"> Photoshop</a>
 		  <a href="#" class="list-group-item"><img src="/modules/users/img/illustrator.png" width="30" height="30"> Illustrator</a>
@@ -52,5 +50,5 @@
 		<div class="list-group">
 		  <a href="#" class="list-group-item"><img src="/modules/users/img/problem-solver.png" width="30" height="30"> Problem Solver</a>
 		</div>
-	</div>
+	</div>-->
 </section>

@@ -1,8 +1,22 @@
 'use strict';
 
 // Articles controller
-angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
-	function($scope, $stateParams, $location, Authentication, Articles) {
+angular.module('articles', ['ngTagsInput']).controller('ArticlesController', ['$scope', '$http', '$stateParams', '$location', 'Authentication', 'Articles',
+	function($scope, $http, $stateParams, $location, Authentication, Articles) {
+		$scope.tags = [
+            { text: 'just' },
+            { text: 'some' },
+            { text: 'cool' },
+            { text: 'tags' }
+          ];
+          $scope.loadTags = function(query) {
+            return $http.get('/tags?query=' + query);
+          };
+        });
+
+		$scope.user = Authentication.user;
+
+		
 		$scope.authentication = Authentication;
 
 		// Create new Article

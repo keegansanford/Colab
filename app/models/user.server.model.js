@@ -48,7 +48,10 @@ var UserSchema = new Schema({
 	social: {
 		twitter: String,
 		dribbble: String,
-		github: String
+		github: String,
+		linkedin: String,
+		codepen: String,
+		behance: String
 	},
 	email: {
 		type: String,

@@ -17,6 +17,19 @@ h1#addmore {
 	margin-top:20px;
 }
 
+.row + .row{
+	margin-top: 2em;
+}
+
+label{
+	margin-top: .5em;
+}
+
+button:not(.close){
+	margin-top: 2em;
+	width: 100%;
+}
+
 .profile{
 	text-align: center;
 	width: 80%;

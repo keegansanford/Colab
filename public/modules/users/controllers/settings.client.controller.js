@@ -70,9 +70,9 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 
 		// Get user's photos
 		$scope.getUserPhotos = function() {
-			console.log("user photos ran!")
+			console.log('user photos ran!');
 			$scope.photos = Photos.query(function(){
-				console.log(response);
+				
 			});
 		};
 	}

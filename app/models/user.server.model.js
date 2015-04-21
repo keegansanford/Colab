@@ -45,6 +45,11 @@ var UserSchema = new Schema({
 		type: String,
 		trim: true,
 	},
+	social: {
+		twitter: String,
+		dribbble: String,
+		github: String
+	},
 	email: {
 		type: String,
 		trim: true,

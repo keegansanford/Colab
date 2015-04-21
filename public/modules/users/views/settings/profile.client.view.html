@@ -1,12 +1,30 @@
 <section class="row" data-ng-controller="SettingsController">
 	<div class="page-header">
 		<div class="profile">
-			<img class="profile__img" src="http://placehold.it/350x150">
+			<img class="profile__img" src="http://placehold.it/150x150">
 			<h1 class="profile__name">{{ user.displayName }}</h1>
 			<p class="profile__bio" data-ng-bind="user.bio">
 				Errem iriure definitiones ius ad, ei unum deleniti copiosae duo.
 			</p>
-			<button type="submit" class="btn btn-large btn-primary">Send Colab Request</button>
+			<div class="profile__social">
+				<ul>
+					<li ng-if="user.social.twitter">
+						<a href="http://twitter.com/{{user.social.twitter}}">
+							<img src="modules/users/img/social/twitter.png">
+						</a>
+					</li>
+					<li ng-if="user.social.dribbble">
+						<a href="http://dribbble.com/{{user.social.dribbble}}">
+							<img src="modules/users/img/social/dribbble.png">
+						</a>
+					</li>
+					<li ng-if="user.social.github">
+						<a href="http://github.com/{{user.social.github}}">
+							<img src="modules/users/img/social/github.png"> 
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div class="profile__main">

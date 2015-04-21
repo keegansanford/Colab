@@ -53,6 +53,27 @@ h1#addmore {
 	margin-bottom: 1em;
 }
 
+.profile__social ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+.profile__social li{
+	color: #6b3586;
+	display: inline-block;
+	margin-right: 1em;
+}
+	.profile__social li:last-of-type{
+		margin-right: 0;
+	}
+
+.profile__social img{
+	max-width: 50px;
+	background: white;
+	border-radius: 100%;
+	padding: 3px;
+}
+
 .post{
 	border: 1px solid #864e9f;
 	border-radius: 4px;

@@ -1,8 +1,9 @@
 'use strict';
 
-angular.module('users', ['ngTagsInput']).controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', 'Articles',
-	function($scope, $http, $location, Users, Authentication, Articles) {
-		
+angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication',
+	function($scope, $http, $location, Users, Authentication) {
+		$scope.user = Authentication.user;
+
 		$scope.tags = [
             { text: 'just' },
             { text: 'some' },
@@ -12,9 +13,6 @@ angular.module('users', ['ngTagsInput']).controller('SettingsController', ['$sco
           $scope.loadTags = function(query) {
             return $http.get('/tags?query=' + query);
           };
-        });
-
-		$scope.user = Authentication.user;
 
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');

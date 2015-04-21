@@ -66,7 +66,7 @@ exports.list = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			console.log(users);
+			//console.log(users);
 			res.jsonp(users);
 		}
 	});

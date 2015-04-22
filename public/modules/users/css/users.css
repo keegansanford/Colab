@@ -13,10 +13,6 @@
 	position: absolute;
 }
 
-h1#addmore {
-	margin-top:20px;
-}
-
 .row + .row{
 	margin-top: 2em;
 }
@@ -85,12 +81,17 @@ button:not(.close){
 	border-radius: 100%;
 	padding: 3px;
 }
+	.profile__social img:hover{
+		background: whitesmoke;
+		background: rgba(255,255,255,0.8);
+	}
 
 .post{
 	border: 1px solid #864e9f;
 	border-radius: 4px;
 	padding: 5%;
-	background:  rgba(255, 255, 255, 0.8);;
+	background: white;
+	background:  rgba(255, 255, 255, 0.8);
 	color: black;
 }
 
@@ -113,7 +114,11 @@ button:not(.close){
 .list-group-item{
 	border: 1px solid #864e9f;
 	color: #000000;
+	background: white;
+	background:  rgba(255, 255, 255, 0.8); 
 }
-	a.list-group-item:hover{
+	a.list-group-item:hover,
+	.post:hover{
+		background: whitesmoke;
 		background: rgba(255, 255, 255, 0.6);
 	}

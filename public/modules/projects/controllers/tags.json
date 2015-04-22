@@ -1,0 +1,23 @@
+[
+    { "name": "Photoshop", "flag": "/modules/users/img/photoshop.png", "confederation": "CAF", "rank": 1 },
+    { "name": "Illustrator", "flag": "/modules/users/img/photoshop.png", "confederation": "CONMEBOL", "rank": 2 },
+    { "name": "InDesign", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 3 },
+    { "name": "Powerpoint", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 4 },
+    { "name": "Innovative", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 5 },
+    { "name": "Html5", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 6 },
+    { "name": "Css3", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 7 },
+    { "name": "JavaScript", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 8 },
+    { "name": "Typography", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 9 },
+    { "name": "Organized", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 10 },
+    { "name": "Works Well With A Team", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 11 },
+    { "name": "Self-Driven", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 12 },
+    { "name": "Photographer", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 13 },
+    { "name": "Trustworthy", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 14 },
+    { "name": "Problem Solver", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 15 },
+    { "name": "Front-end Web Designer", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 16 },
+    { "name": "Back-end Web Designer", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 17 },
+    { "name": "Graphic Designer", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 18 },
+    { "name": "Php", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 19 },
+    { "name": "Wordpress", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 20 },
+    { "name": "CMS", "flag": "/modules/users/img/photoshop.png", "confederation": "AFC", "rank": 21 }
+]

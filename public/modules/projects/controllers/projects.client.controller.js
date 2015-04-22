@@ -6,10 +6,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$http', 
 		$scope.authentication = Authentication;
 
 		$scope.tags = [
-            { text: 'just' },
-            { text: 'some' },
-            { text: 'cool' },
-            { text: 'tags' }
+            { 'name': 'Photoshop', 'flag': '/modules/users/img/photoshop.png' },
+    		{ 'name': 'Illustrator', 'flag': '/modules/users/img/illustrator.png' },
+    		{ 'name': 'Html5', 'flag': '/modules/users/img/html.png' },
+    		{ 'name': 'Css3', 'flag': '/modules/users/img/css.png' }
           ];
           
       	$scope.loadTags = function(query) {

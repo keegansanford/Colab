@@ -115,5 +115,5 @@ button:not(.close){
 	color: #000000;
 }
 	a.list-group-item:hover{
-		background: rgba(134, 78, 159, 0.1);
+		background: rgba(255, 255, 255, 0.6);
 	}

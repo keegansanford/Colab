@@ -5,125 +5,125 @@
  */
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
-	Article = mongoose.model('Article'),
+	Project = mongoose.model('Project'),
 	_ = require('lodash');
 
 /**
- * Create a article
+ * Create a project
  */
 exports.create = function(req, res) {
-	var article = new Article(req.body);
-	article.user = req.user;
+	var project = new Project(req.body);
+	project.user = req.user;
 
-	article.save(function(err) {
+	project.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(article);
+			res.json(project);
 		}
 	});
 };
 
 /**
- * Show the current article
+ * Show the current project
  */
 exports.read = function(req, res) {
-	res.json(req.article);
+	res.json(req.project);
 };
 
 /**
- * Update a article
+ * Update a project
  */
 exports.update = function(req, res) {
-	var article = req.article;
+	var project = req.project;
 
-	article = _.extend(article, req.body);
+	project = _.extend(project, req.body);
 
-	article.save(function(err) {
+	project.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(article);
+			res.json(project);
 		}
 	});
 };
 
 /**
- * Delete an article
+ * Delete an project
  */
 exports.delete = function(req, res) {
-	var article = req.article;
+	var project = req.project;
 
-	article.remove(function(err) {
+	project.remove(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(article);
+			res.json(project);
 		}
 	});
 };
 
 /**
- * List of Articles
+ * List of Projects
  */
 exports.list = function(req, res) {
-	Article.find().sort('-created').populate('user', 'displayName').exec(function(err, articles) {
+	Project.find().sort('-created').populate('user', 'displayName').exec(function(err, projects) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.json(articles);
+			res.json(projects);
 		}
 	});
 };
 
 exports.listUserProjects = function(req, res){
-	Article.find({ user: req.user }).sort('-created').populate('user', 'displayName').exec(function(err, articles) {
+	Project.find({ user: req.user }).sort('-created').populate('user', 'displayName').exec(function(err, projects) {
 		if (err) {
 	  		return res.status(400).send({
 	    	message: errorHandler.getErrorMessage(err)
 	  	});
 		} else {
-	  		res.jsonp(articles);
+	  		res.jsonp(projects);
 		}
 	});
 };
 
 /**
- * Article middleware
+ * Project middleware
  */
-exports.articleByID = function(req, res, next, id) {
+exports.projectByID = function(req, res, next, id) {
 
 	if (!mongoose.Types.ObjectId.isValid(id)) {
 		return res.status(400).send({
-			message: 'Article is invalid'
+			message: 'Project is invalid'
 		});
 	}
 
-	Article.findById(id).populate('user', 'displayName').exec(function(err, article) {
+	Project.findById(id).populate('user', 'displayName').exec(function(err, project) {
 		if (err) return next(err);
-		if (!article) {
+		if (!project) {
 			return res.status(404).send({
-				message: 'Article not found'
+				message: 'Project not found'
 			});
 		}
-		req.article = article;
+		req.project = project;
 		next();
 	});
 };
 
 /**
- * Article authorization middleware
+ * Project authorization middleware
  */
 exports.hasAuthorization = function(req, res, next) {
-	if (req.article.user.id !== req.user.id) {
+	if (req.project.user.id !== req.user.id) {
 		return res.status(403).send({
 			message: 'User is not authorized'
 		});

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users', ['ngTagsInput']).controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', 'Articles',
-	function($scope, $http, $location, Users, Authentication, Articles) {
+angular.module('users', ['ngTagsInput']).controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', 'Projects',
+	function($scope, $http, $location, Users, Authentication, Projects) {
 		
 		$scope.tags = [
             { text: 'just' },

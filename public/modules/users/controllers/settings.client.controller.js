@@ -10,11 +10,9 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
             { text: 'cool' },
             { text: 'tags' }
           ];
-          $scope.loadTags = function(query) {
-            return $http.get('/tags?query=' + query);
-          };
-
-		$scope.user = Authentication.user;
+		$scope.loadTags = function(query) {
+			return $http.get('/tags?query=' + query);
+		};
 
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');
@@ -82,7 +80,6 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 
 		// Get user's projects
 		$scope.getUserProjects = function() {
-			console.log('user projects ran!');
 			$http.get('/users/me/projects')
 				.success(function(data){
 					console.log(data);

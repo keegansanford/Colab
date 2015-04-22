@@ -1,23 +1,20 @@
 'use strict';
 
 // Projects controller
-angular.module('projects', ['ngTagsInput']).controller('ProjectsController', ['$scope', '$http', '$stateParams', '$location', 'Authentication', 'Projects',
-	function($scope, $http, $stateParams, $location, Authentication, Projects) {
+angular.module('projects').controller('ProjectsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Projects',
+	function($scope, $stateParams, $location, Authentication, Projects) {
+		$scope.authentication = Authentication;
+
 		$scope.tags = [
             { text: 'just' },
             { text: 'some' },
             { text: 'cool' },
             { text: 'tags' }
           ];
-          $scope.loadTags = function(query) {
-            return $http.get('/tags?query=' + query);
-          };
-        });
-
-		$scope.user = Authentication.user;
-
-		
-		$scope.authentication = Authentication;
+          
+      	$scope.loadTags = function(query) {
+        	return $http.get('/tags?query=' + query);
+      	};
 
 		// Create new Project
 		$scope.create = function() {

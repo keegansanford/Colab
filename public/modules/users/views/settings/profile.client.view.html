@@ -4,7 +4,6 @@
 			<img class="profile__img" src="http://placehold.it/150x150">
 			<h1 class="profile__name">{{ user.displayName }}</h1>
 			<p class="profile__bio" data-ng-bind="user.bio">
-				Errem iriure definitiones ius ad, ei unum deleniti copiosae duo.
 			</p>
 			<div class="profile__social">
 				<ul>
@@ -44,7 +43,7 @@
 	</div>
 	<div class="profile__main">
 		<div class="col-md-6" data-ng-init="getUserProjects()">
-			<h2>{{ user.firstName }}'s Projects</h3>
+			<h2>Projects</h3>
 			<div class="post" data-ng-repeat="project in projects">
 				<div class="post__info">
 					<h3 class="post__title">
@@ -62,7 +61,7 @@
 			</div>
 		</div>
 		<div class="col-md-6">
-			<h2>{{ user.firstName }}'s Skills</h2>
+			<h2>Skills</h2>
 			<div class="list-group">
 				<a href="#" class="list-group-item">
 					<img src="/modules/users/img/photoshop.png" width="30" height="30"> Photoshop

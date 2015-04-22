@@ -14,6 +14,8 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
             return $http.get('/tags?query=' + query);
           };
 
+		$scope.user = Authentication.user;
+
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');
 

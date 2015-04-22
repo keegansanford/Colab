@@ -19,11 +19,18 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$http', 
 		// Create new Project
 		$scope.create = function() {
 			// Create new Project object
+			console.log('create function called');
 			var project = new Projects({
 				title: this.title,
-				content: this.content
+				content: this.content,
+				tags: []
 			});
 
+			//To store names as a string.  For Json file will have to change to an object
+			for(var i=0; i<$scope.tags.length; i++) {
+				project.tags.push($scope.tags[i].name);
+			}
+			console.log(project);
 			// Redirect after save
 			project.$save(function(response) {
 				$location.path('projects/' + response._id);
@@ -31,6 +38,12 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$http', 
 				// Clear form fields
 				$scope.title = '';
 				$scope.content = '';
+				$scope.tags = [
+		            { 'name': 'Photoshop', 'flag': '/modules/users/img/photoshop.png' },
+		    		{ 'name': 'Illustrator', 'flag': '/modules/users/img/illustrator.png' },
+		    		{ 'name': 'Html5', 'flag': '/modules/users/img/html.png' },
+		    		{ 'name': 'Css3', 'flag': '/modules/users/img/css.png' }
+		        ];
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

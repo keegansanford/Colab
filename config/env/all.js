@@ -51,6 +51,8 @@ module.exports = {
 			],
 			js: [
 				'public/lib/angular/angular.js',
+				'http://localhost:3000/socket.io/socket.io.js',
+				'http://localhost:3000/lib/angular-socket-io/socket.min.js',
 				'public/lib/angular-resource/angular-resource.js',
 				'public/lib/angular-animate/angular-animate.js',
 				'public/lib/angular-ui-router/release/angular-ui-router.js',

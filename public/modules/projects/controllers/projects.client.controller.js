@@ -1,8 +1,8 @@
 'use strict';
 
 // Projects controller
-angular.module('projects').controller('ProjectsController', ['$scope', '$http', '$stateParams', '$location', 'Authentication', 'Projects',
-	function($scope, $http, $stateParams, $location, Authentication, Projects) {
+angular.module('projects').controller('ProjectsController', ['$scope', '$http', '$stateParams', '$location', 'Socket', 'Authentication', 'Projects',
+	function($scope, $http, $stateParams, $location, Socket, Authentication, Projects) {
 		$scope.authentication = Authentication;
 
 		$scope.tags = [
@@ -88,5 +88,9 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$http', 
 				projectId: $stateParams.projectId
 			});
 		};
+
+		Socket.on('project.created', function(project) {
+		    console.log(project);
+		});
 	}
 ]);

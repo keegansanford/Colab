@@ -9,16 +9,13 @@ body{
 }
 
 .jumbotron img{
-	width:100%;
-	margin-top:150px;
-	margin-bottom:0px;
+
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .jumbotron p {
 	color:#ffffff;
-	margin-bottom:25px;
 	padding:15%;
 }
 
@@ -52,8 +49,15 @@ body{
 	margin-top:75px;
 }
 
+.navbar-inverse {
+  background-image: linear-gradient(to bottom, #6b3586 0%, #753c91 100%);
+  border-color:transparent;
+  background-color: #753c91;
+}
 
-
+.navbar-header img{
+	width: 75px;
+}
 
 
 

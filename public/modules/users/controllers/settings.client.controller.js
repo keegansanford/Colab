@@ -1,18 +1,40 @@
 'use strict';
 
 angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication',
-	function($scope, $http, $location, Users, Authentication) {
+	function($scope, $http, $location, Users, Authentication, Usertag) {
 		$scope.user = Authentication.user;
 
 		$scope.tags = [
-            { text: 'just' },
-            { text: 'some' },
-            { text: 'cool' },
-            { text: 'tags' }
+            { 'name': 'Photoshop', 'flag': '/modules/users/img/photoshop.png' },
+    		{ 'name': 'Html5', 'flag': '/modules/users/img/html.png' }
           ];
 		$scope.loadTags = function(query) {
 			return $http.get('/tags?query=' + query);
 		};
+
+		$scope.create = function() {
+			// Create new Project object
+			console.log('create function called');
+			var usertag = new Usertag({
+				tags: []
+			});
+
+			//To store names as a string.  For Json file will have to change to an object
+			for(var i=0; i<$scope.tags.length; i++) {
+				usertag.tags.push($scope.tags[i].name);
+			}
+			console.log(usertag);
+			// Redirect after save
+			usertag.$save(function(response) {
+				$location.path('profile');
+
+				// Clear form fields
+				$scope.tags = [];
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		};
+
 
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');

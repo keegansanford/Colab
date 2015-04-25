@@ -62,20 +62,34 @@
 		</div>
 		<div class="col-md-6">
 			<h2>Skills</h2>
-			<div class="list-group">
-				<a href="#" class="list-group-item">
-					<img src="/modules/users/img/photoshop.png" width="30" height="30"> Photoshop
-				</a>
-				<a href="#" class="list-group-item">
-					<img src="/modules/users/img/illustrator.png" width="30" height="30"> Illustrator
-				</a>
-				<a href="#" class="list-group-item">
-					<img src="/modules/users/img/indesign.png" width="30" height="30"> InDesign
-				</a>
-				<a href="#" class="list-group-item">
-					<img src="/modules/users/img/powerpoint.png" width="30" height="30"> Powerpoint
-				</a>
-			</div>
+				<ul class="tag-list">
+					<li data-ng-bind="tags" data-ng-repeat="tags in users.tags"></li>
+				</ul>
+			<form name="projectForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+				<fieldset>
+				<div class="form-group">
+				<tags-input ng-model="tags" 
+				            display-property="name" 
+				            placeholder="Add a skill..." 
+				            template="my-custom-template">
+				</tags-input>
+				<script type="text/ng-template" id="my-custom-template">
+			      <div class="tag-template">
+			        <div>
+			          <img ng-src="{{data.flag}}" ng-if="data.flag"/>
+			        </div>
+			        <div>
+			          <span>{{$getDisplayText()}}</span>
+			          <a class="remove-button" ng-click="$removeTag()">&#10006;</a>
+			        </div>
+			      </div>
+			    </script>
+				</div>
+			    <div class="form-group">
+					<input type="submit" class="btn btn-default">
+				</div>
+			</fieldset>
+		</form>
 		</div>
 	</div>
 </section>

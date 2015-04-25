@@ -8,13 +8,13 @@
 	<h3>Edit your profile, <span data-ng-bind="user.displayName"></span></h3>
 	<form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
 
-		<!--<fieldset class="row">
+		<fieldset class="row">
 			<div class="col-md-6 col-sm-6">
 				<label for="image">Profile Images</label>
-				<input type="file" name="image" data-ng-model="imageHolder.image" id="image" accept="image/*" required/>
+				<img src="{{ user.image }}">
+				<input type="file" name="image" file-model="imageFile" id="image" accept="image/*" required/>
 			</div>
-
-		</fieldset>-->
+		</fieldset>
 
 		<fieldset class="row">
 			<div class="col-md-6 col-sm-6">

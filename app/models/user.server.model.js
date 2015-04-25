@@ -41,6 +41,10 @@ var UserSchema = new Schema({
 		type: String,
 		trim: true
 	},
+	image:{
+		type: String,
+		default: 'modules/users/img/default.png'
+	},
 	bio: {
 		type: String,
 		trim: true,

@@ -115,10 +115,10 @@ button:not(.close){
 	border: 1px solid #864e9f;
 	color: #000000;
 	background: white;
-	background:  rgba(255, 255, 255, 0.8); 
+	background: rgba(255, 255, 255, 0.8); 
 }
 	a.list-group-item:hover,
 	.post:hover{
 		background: whitesmoke;
-		background: rgba(255, 255, 255, 0.6);
+		background: rgba(255, 255, 255, 0.7);
 	}

@@ -64,7 +64,8 @@ tags-input .tags .tag-item .remove-button {
   cursor: pointer;
   vertical-align: middle;
   font: bold 16px Arial, sans-serif;
-  color: #585858;
+  color: whitesmoke;
+  color: rgba(255,255,255,0.5);
 }
 tags-input .tags .tag-item .remove-button:active {
   color: red;

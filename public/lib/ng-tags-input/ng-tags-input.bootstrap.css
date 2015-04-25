@@ -20,9 +20,8 @@ tags-input .tags {
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 tags-input .tags .tag-item {
-  color: white;
-  background: #428bca;
-  border: 1px solid #357ebd;
+  background: #6b3586;
+  margin-right: .5em;
   border-radius: 4px;
 }
 tags-input .tags .tag-item.selected {

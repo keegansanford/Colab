@@ -1,7 +1,7 @@
 <section class="row" data-ng-controller="SettingsController">
 	<div class="page-header">
 		<div class="profile">
-			<img class="profile__img" src="http://placehold.it/150x150">
+			<img class="profile__img" src="http://placehold.it/150x150" data-ng-bind="imageHolder.image">
 			<h1 class="profile__name">{{ user.displayName }}</h1>
 			<p class="profile__bio" data-ng-bind="user.bio">
 			</p>

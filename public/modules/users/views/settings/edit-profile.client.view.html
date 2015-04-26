@@ -47,6 +47,28 @@
 		</fieldset>
 
 		<fieldset class="row">
+			<div class="col-md-12 col-sm-12">
+				<label for="tags">Skills</label>
+				<tags-input ng-model="tags" 
+				                display-property="name" 
+				                placeholder="Add a tag..." 
+				                template="my-custom-template">
+				    </tags-input>
+				<script type="text/ng-template" id="my-custom-template">
+			      <div class="tag-template">
+			        <div>
+			          <img ng-src="{{data.flag}}" ng-if="data.flag"/>
+			        </div>
+			        <div>
+			          <span>{{$getDisplayText()}}</span>
+			          <a class="remove-button" ng-click="$removeTag()">&#10006;</a>
+			        </div>
+			      </div>
+			    </script>
+			</div>
+		</fieldset>
+
+		<fieldset class="row">
 			<div class="col-md-4  col-sm-6">
 				<label for="username">Twitter</label>
 				<input type="text" id="twitter" name="twitter" class="form-control" data-ng-model="user.social.twitter" placeholder="Username">

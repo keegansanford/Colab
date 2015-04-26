@@ -5,10 +5,10 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		$scope.user = Authentication.user;
 
 		$scope.tags = [
-            { text: 'just' },
-            { text: 'some' },
-            { text: 'cool' },
-            { text: 'tags' }
+            { 'name': 'Photoshop', 'flag': '/modules/users/img/photoshop.png' },
+    		{ 'name': 'Illustrator', 'flag': '/modules/users/img/illustrator.png' },
+    		{ 'name': 'Html5', 'flag': '/modules/users/img/html.png' },
+    		{ 'name': 'Css3', 'flag': '/modules/users/img/css.png' }
           ];
 		$scope.loadTags = function(query) {
 			return $http.get('/tags?query=' + query);
@@ -53,7 +53,12 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 			if (isValid) {
 				$scope.success = $scope.error = null;
 				var user = new Users($scope.user);
-
+				
+				for(var i=0; i<$scope.tags.length; i++) {
+				user.tags.push($scope.tags[i].name);
+				}
+				console.log(user);
+				
 				user.$update(function(response) {
 					$scope.success = true;
 					Authentication.user = response;
@@ -89,7 +94,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 	}
 ])
 .directive('fileModel', ['$parse', function ($parse) {
-	console.log("fileModel")
+	console.log('fileModel');
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {

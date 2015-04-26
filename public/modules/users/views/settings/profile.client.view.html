@@ -62,20 +62,10 @@
 		</div>
 		<div class="col-md-6">
 			<h2>Skills</h2>
-			<div class="list-group">
-				<a href="#" class="list-group-item">
-					<img src="/modules/users/img/photoshop.png" width="30" height="30"> Photoshop
-				</a>
-				<a href="#" class="list-group-item">
-					<img src="/modules/users/img/illustrator.png" width="30" height="30"> Illustrator
-				</a>
-				<a href="#" class="list-group-item">
-					<img src="/modules/users/img/indesign.png" width="30" height="30"> InDesign
-				</a>
-				<a href="#" class="list-group-item">
-					<img src="/modules/users/img/powerpoint.png" width="30" height="30"> Powerpoint
-				</a>
-			</div>
+			<ul class="tag-list">
+				<li data-ng-bind="tags" data-ng-repeat="tags in user.tags"></li>
+			</ul>
+			{{ user.tags }}
 		</div>
 	</div>
 </section>

@@ -17,10 +17,10 @@ angular.module('users').config(['$stateProvider',
 			url: '/settings/skills',
 			templateUrl: 'modules/users/views/settings/skills.client.view.html'
 		}).
-		state('matches', {
-			url: '/settings/matches',
-			templateUrl: 'modules/users/views/settings/matches.client.view.html'
-		}).
+		// state('matches', {
+		// 	url: '/settings/matches',
+		// 	templateUrl: 'modules/users/views/settings/matches.client.view.html'
+		// }).
 		state('list-matches', {
 			url: '/settings/list-matches',
 			templateUrl: 'modules/users/views/settings/list-matches.client.view.html'

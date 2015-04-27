@@ -98,6 +98,31 @@ exports.listUserProjects = function(req, res){
 	});
 };
 
+exports.listRelevantProjects = function(req, res){
+	var userTags = [];
+	var userSocial = req.user.social;
+
+	if(userSocial.behance || userSocial.dribbble){
+		userTags.push('Photoshop', 'Illustrator', 'Sketch', 'Design');
+		console.log(userTags);
+	}
+	if(userSocial.github || userSocial.codepen){
+		userTags.push('Code', 'Javascript');
+		console.log(userTags);
+	}
+
+	Project.find({ tags: { $in: userTags } }).sort('-created').populate('user', 'displayName').exec(function(err, projects){
+		if(err){
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		}
+		else{
+			res.jsonp(projects);
+		}
+	});
+};
+
 /**
  * Project middleware
  */

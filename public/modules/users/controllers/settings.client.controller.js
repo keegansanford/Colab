@@ -89,7 +89,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 	}
 ])
 .directive('fileModel', ['$parse', function ($parse) {
-	console.log("fileModel")
+	console.log('fileModel');
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {

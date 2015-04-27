@@ -89,8 +89,16 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$http', 
 			});
 		};
 
-		Socket.on('project.created', function(project) {
+		$scope.findRelevant = function() {
+			$http.get('/projects/relevant')
+				.success(function(data){
+					console.log(data);
+					$scope.projects = data;
+				});
+		};
+
+		/*Socket.on('project.created', function(project) {
 		    console.log(project);
-		});
+		});*/
 	}
 ]);

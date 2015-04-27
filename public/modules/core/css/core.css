@@ -46,6 +46,7 @@ a{
 
 .active a,
 .open > .dropdown-toggle{
+	background: rgb(10,10,10);
 	background: rgba(0,0,0,.2) !important;
 	box-shadow: none !important;
 }
@@ -57,6 +58,7 @@ a{
 }
 
 .dropdown-menu > li > a:hover{
+	background: rgb(10,10,10);
 	background: rgba(0,0,0,.2) !important;
 }
 
@@ -77,6 +79,7 @@ a{
 }
 
 .text-muted{
+	color: rgb(235,235,235);
 	color: rgba(255,255,255,.3);
 	line-height: 3em;
 }

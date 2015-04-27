@@ -89,8 +89,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$http', 
 			});
 		};
 
-		Socket.on('project.created', function(project) {
-		    console.log(project);
-		});
+		// Socket.on('project.created', function(project) {
+		//     console.log(project);
+		// });
 	}
 ]);

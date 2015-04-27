@@ -1,4 +1,4 @@
-<div class="container" data-ng-controller="HeaderController">
+<div class="container" data-ng-controller="HeaderController" data-ng-init="find()">
 	<div class="navbar-header">
 		<button class="navbar-toggle" type="button" data-ng-click="toggleCollapsibleMenu()">
 			<span class="sr-only">Toggle navigation</span>
@@ -62,6 +62,24 @@
 					<li class="divider"></li>
 					<li>
 						<a href="/auth/signout">Signout</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" ng-show="myValue" class="ng-hide">
+			<li class="dropdown" dropdown>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" dropdown-toggle>
+					<span>New!</span> <b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li data-ng-repeat="project in projects">
+						<a data-ng-href="#!/projects/{{project._id}}">
+							<span data-ng-bind="project.title"></span>
+						</a>
+					<li>
+					<li class="divider"></li>
+					<li>
+						<a href="#!/projects">View All</a>
 					</li>
 				</ul>
 			</li>

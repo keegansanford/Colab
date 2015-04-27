@@ -74,7 +74,8 @@
 				<ul class="dropdown-menu">
 					<li data-ng-repeat="project in projects">
 						<a data-ng-href="#!/projects/{{project._id}}">
-							<span data-ng-bind="project.title"></span>
+							<span data-ng-bind="project.title"></span> by 
+							<span data-ng-bind="project.user.displayName"></span>
 						</a>
 					<li>
 					<li class="divider"></li>

@@ -1,5 +1,5 @@
 'use strict';
-
+var path = require('path');
 /**
  * Module dependencies.
  */
@@ -25,6 +25,17 @@ exports.update = function(req, res) {
 		user = _.extend(user, req.body);
 		user.updated = Date.now();
 		user.displayName = user.firstName + ' ' + user.lastName;
+
+		console.log(req.file);
+
+		if(req.files) {
+			console.log('found');
+		    //user.image = req.files.file.path.substring(req.files.file.path.indexOf(path.sep)+path.sep.length-1);
+		} 
+		else{
+			console.log('not found');
+		   // user.image = 'default.jpg';
+		}
 
 		user.save(function(err) {
 			if (err) {

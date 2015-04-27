@@ -49,6 +49,7 @@ var UserSchema = new Schema({
 		type: String,
 		trim: true,
 	},
+	//******* profile picture needs to go here too//
 	social: {
 		twitter: String,
 		dribbble: String,
